@@ -1,27 +1,24 @@
-
 import React, { useState } from "react";
 import PropertyCard from "../ui/PropertyCard";
 import ContactForm from "../ui/ContactForm";
 import PhoneModal from "../ui/PhoneModal";
 import { toast } from "sonner";
-
 const SellingOptions = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleContactSubmit = (data: { name: string; phone: string }) => {
+  const handleContactSubmit = (data: {
+    name: string;
+    phone: string;
+  }) => {
     console.log("Contact form submitted:", data);
     toast.success("Te contactaremos pronto para asistirte en la venta");
     // Here you would typically send this data to your backend
   };
-
   const handlePhoneSubmit = (phoneNumber: string) => {
     console.log("Número recibido para WhatsApp:", phoneNumber);
     toast.success("Te contactaremos pronto por WhatsApp");
   };
-
-  return (
-    <>
-      <section className="self-center w-full max-w-[1254px] mt-[71px] px-6 md:px-12 max-md:mt-10">
+  return <>
+      <section className="self-center w-full max-w-[1254px] mt-[71px] px-8 md:px-12 max-md:mt-10">
         <div className="flex w-full flex-col items-center justify-center">
           <div className="flex w-[588px] max-w-full flex-col items-stretch justify-center rounded-2xl">
             <div className="text-[#23242A] text-xs font-semibold leading-6 tracking-[2px] uppercase self-center">
@@ -41,20 +38,12 @@ const SellingOptions = () => {
           <div className="w-full md:w-[1040px] mt-16 md:mt-[120px] px-4 md:px-0">
             {/* Option 1 */}
             <div className="flex flex-col md:flex-row min-h-[260px] w-full items-center gap-8 md:gap-[40px_56px] py-6 md:py-0 md:px-12">
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets/b8628246b4fa4846b671e4072fe20009/1efb3e174aa6bae9b9bf5ff40bc9420808dabce0804ada24a914b4a76263858f?placeholderIfAbsent=true"
-                alt="Sell quickly"
-                className="aspect-[1.54] object-contain w-full md:w-[321px] max-w-[350px] rounded-3xl"
-              />
+              <img src="https://cdn.builder.io/api/v1/image/assets/b8628246b4fa4846b671e4072fe20009/1efb3e174aa6bae9b9bf5ff40bc9420808dabce0804ada24a914b4a76263858f?placeholderIfAbsent=true" alt="Sell quickly" className="aspect-[1.54] object-contain w-full md:w-[321px] max-w-[350px] rounded-3xl" />
               <div className="flex flex-col items-center md:items-stretch justify-center w-full md:w-[407px] px-4 md:px-6 text-center md:text-left">
                 <div className="flex w-full flex-col justify-center">
                   <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
                     <div className="bg-[rgba(235,254,244,1)] flex items-center justify-center w-11 h-11 my-auto px-1.5 rounded-md">
-                      <img
-                        src="https://cdn.builder.io/api/v1/image/assets/b8628246b4fa4846b671e4072fe20009/a53b3c43916fb4dbe0680ddc1084af061033e67bbcab381cf34fd9c04ec23b40?placeholderIfAbsent=true"
-                        alt="Fast icon"
-                        className="aspect-[1] object-contain w-8"
-                      />
+                      <img src="https://cdn.builder.io/api/v1/image/assets/b8628246b4fa4846b671e4072fe20009/a53b3c43916fb4dbe0680ddc1084af061033e67bbcab381cf34fd9c04ec23b40?placeholderIfAbsent=true" alt="Fast icon" className="aspect-[1] object-contain w-8" />
                     </div>
                     <div className="flex flex-col items-center md:items-stretch font-semibold justify-center my-auto">
                       <div className="text-[#6D6970] text-base tracking-[2px] uppercase">
@@ -77,18 +66,11 @@ const SellingOptions = () => {
                     y con nuestros aliados, garantizamos una compra segura, sin
                     trámites ni esperas.
                   </p>
-                  <button 
-                    onClick={() => setIsModalOpen(true)}
-                    className="bg-[rgba(0,124,79,1)] flex min-h-12 items-center gap-2 text-base text-white font-medium text-center justify-center mx-auto md:mx-0 mt-6 px-6 py-3.5 rounded-[100px] max-md:px-5"
-                  >
+                  <button onClick={() => setIsModalOpen(true)} className="bg-[rgba(0,124,79,1)] flex min-h-12 items-center gap-2 text-base text-white font-medium text-center justify-center mx-auto md:mx-0 mt-6 px-6 py-3.5 rounded-[100px] max-md:px-5">
                     <span className="self-stretch my-auto">
                       Hablar por WhatsApp
                     </span>
-                    <img
-                      src="https://cdn.builder.io/api/v1/image/assets/b8628246b4fa4846b671e4072fe20009/55ed9cd5ee3d9f35e906c7dc3659f60f513feda3016b89bbe2d45c1d5a4dcff6?placeholderIfAbsent=true"
-                      alt="WhatsApp"
-                      className="aspect-[1] object-contain w-5 self-stretch shrink-0 my-auto"
-                    />
+                    <img src="https://cdn.builder.io/api/v1/image/assets/b8628246b4fa4846b671e4072fe20009/55ed9cd5ee3d9f35e906c7dc3659f60f513feda3016b89bbe2d45c1d5a4dcff6?placeholderIfAbsent=true" alt="WhatsApp" className="aspect-[1] object-contain w-5 self-stretch shrink-0 my-auto" />
                   </button>
                 </div>
               </div>
@@ -126,11 +108,7 @@ const SellingOptions = () => {
               </div>
 
               <div className="relative flex items-start text-xs text-white font-bold leading-[23px] w-full md:w-[426px] max-w-[350px] md:max-w-full mt-8 md:mt-0">
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets/b8628246b4fa4846b671e4072fe20009/30ad09e0a09622fe0d414b458c73748058e7b448670cace7b30746fa3c952521?placeholderIfAbsent=true"
-                  alt="Broker network"
-                  className="aspect-[1.6] object-contain w-full rounded-lg"
-                />
+                <img src="https://cdn.builder.io/api/v1/image/assets/b8628246b4fa4846b671e4072fe20009/30ad09e0a09622fe0d414b458c73748058e7b448670cace7b30746fa3c952521?placeholderIfAbsent=true" alt="Broker network" className="aspect-[1.6] object-contain w-full rounded-lg" />
                 <div className="bg-[rgba(0,0,0,0.25)] shadow-[0px_4px_24px_rgba(0,0,0,0.08)] absolute z-0 overflow-hidden -translate-x-2/4 px-6 py-1 rounded-[100px] left-2/4 bottom-5 whitespace-nowrap max-md:text-xs max-md:px-3">
                   <span className="font-normal">Conoce la </span>
                   <span className="text-white">red de brokers</span>
@@ -150,11 +128,7 @@ const SellingOptions = () => {
                 <div className="flex w-full flex-col items-center md:items-stretch justify-center">
                   <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
                     <div className="bg-[rgba(235,254,244,1)] flex items-center justify-center w-11 h-11 my-auto px-1.5 rounded-md">
-                      <img
-                        src="https://cdn.builder.io/api/v1/image/assets/b8628246b4fa4846b671e4072fe20009/dab45a9f5b4ea05859683451cc3f97f4ac1fc95e372ae70f86309b3d7daa8038?placeholderIfAbsent=true"
-                        alt="Easy icon"
-                        className="aspect-[1] object-contain w-8"
-                      />
+                      <img src="https://cdn.builder.io/api/v1/image/assets/b8628246b4fa4846b671e4072fe20009/dab45a9f5b4ea05859683451cc3f97f4ac1fc95e372ae70f86309b3d7daa8038?placeholderIfAbsent=true" alt="Easy icon" className="aspect-[1] object-contain w-8" />
                     </div>
                     <div className="flex flex-col items-center md:items-stretch font-semibold justify-center my-auto">
                       <div className="text-[#6D6970] text-base tracking-[2px] uppercase">
@@ -187,15 +161,7 @@ const SellingOptions = () => {
         </div>
       </section>
 
-      <PhoneModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        onSubmit={handlePhoneSubmit}
-        title="Déjanos tu número para WhatsApp"
-        buttonText="Enviar"
-      />
-    </>
-  );
+      <PhoneModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} onSubmit={handlePhoneSubmit} title="Déjanos tu número para WhatsApp" buttonText="Enviar" />
+    </>;
 };
-
 export default SellingOptions;
