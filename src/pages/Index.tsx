@@ -1,3 +1,4 @@
+
 import React from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -12,7 +13,7 @@ const Index = () => {
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
 
-      <main className="flex flex-col px-20 max-md:pl-5">
+      <main className="flex flex-col px-4 md:px-8 lg:px-20 max-md:pl-4">
         <div className="bg-white flex w-full max-w-[1366px] flex-col overflow-hidden items-stretch max-md:max-w-full">
           <HeroSection />
           <ServiceCards />
