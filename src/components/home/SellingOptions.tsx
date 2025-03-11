@@ -35,7 +35,7 @@ const SellingOptions = () => {
             </div>
           </div>
 
-          <div className="w-full md:w-[1040px] mt-16 md:mt-[120px] px-4 md:px-0">
+          <div className="w-full md:w-[1040px] mt-16 md:mt-[120px] px-6 md:px-0">
             {/* Option 1 */}
             <div className="flex flex-col md:flex-row min-h-[260px] w-full items-center gap-8 md:gap-[40px_56px] py-6 md:py-0 md:px-12">
               <img src="https://cdn.builder.io/api/v1/image/assets/b8628246b4fa4846b671e4072fe20009/1efb3e174aa6bae9b9bf5ff40bc9420808dabce0804ada24a914b4a76263858f?placeholderIfAbsent=true" alt="Sell quickly" className="aspect-[1.54] object-contain w-full md:w-[321px] max-w-[350px] rounded-3xl" />
