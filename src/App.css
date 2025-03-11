@@ -48,4 +48,19 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
+  
+  /* Ensure text wrapping on small screens */
+  .text-wrap-mobile {
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+  
+  /* Center content on mobile */
+  .mobile-center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
+
