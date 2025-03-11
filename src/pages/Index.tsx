@@ -13,21 +13,20 @@ const Index = () => {
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
 
-      <main className="flex flex-col px-4 md:px-8 lg:px-20 max-md:pl-4">
-        <div className="bg-white flex w-full max-w-[1366px] flex-col overflow-hidden items-stretch max-md:max-w-full">
+      <main className="flex flex-col">
+        <div className="px-4 md:px-8 lg:px-20 max-md:pl-4 bg-white flex w-full flex-col overflow-hidden items-stretch">
           <HeroSection />
           <ServiceCards />
-
           <SellingOptions />
-
           <SellingSteps />
         </div>
 
-        <div className="flex flex-col items-stretch mt-20 max-md:max-w-full max-md:mt-10">
+        <div className="flex flex-col items-stretch mt-20 w-full max-md:mt-10">
           <FaqSection />
-          <Footer />
         </div>
       </main>
+      
+      <Footer />
     </div>
   );
 };
