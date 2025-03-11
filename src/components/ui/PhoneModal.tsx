@@ -1,5 +1,7 @@
 
 import React, { useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 interface PhoneModalProps {
   isOpen: boolean;
@@ -17,15 +19,41 @@ const PhoneModal: React.FC<PhoneModalProps> = ({
   buttonText = "Enviar",
 }) => {
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
     if (phoneNumber) {
-      onSubmit(phoneNumber);
-      setPhoneNumber("");
-      onClose();
+      setIsSubmitting(true);
+      
+      try {
+        // Save to Supabase
+        const { error } = await supabase
+          .from('contact_broker')
+          .insert([{ phone: phoneNumber }]);
+          
+        if (error) {
+          throw error;
+        }
+        
+        // Call the parent component's onSubmit function
+        onSubmit(phoneNumber);
+        
+        // Reset form
+        setPhoneNumber("");
+        
+        // Close modal
+        onClose();
+        
+      } catch (error) {
+        console.error("Error saving phone number:", error);
+        toast.error("Hubo un error al enviar tu número. Por favor intenta de nuevo.");
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -66,9 +94,10 @@ const PhoneModal: React.FC<PhoneModalProps> = ({
           
           <button
             type="submit"
+            disabled={isSubmitting}
             className="bg-[#008059] text-white font-semibold py-2.5 px-6 rounded-full flex items-center justify-center gap-2"
           >
-            <span>{buttonText}</span>
+            <span>{isSubmitting ? "Enviando..." : buttonText}</span>
             <img
               src="https://cdn.builder.io/api/v1/image/assets/b8628246b4fa4846b671e4072fe20009/5d22c30c7541b2ba4bbc853f91d92dc4460ea3141069749ce4b12bb5a21dbbd6?placeholderIfAbsent=true"
               alt="Submit"
