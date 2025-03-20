@@ -79,7 +79,7 @@ const ServiceCards = () => {
               onClick={() => openModal("assist")}
               className="bg-[rgba(0,128,89,1)] flex items-center gap-2 text-white text-center leading-none justify-center mt-4 px-4 py-2 rounded-[100px]"
             >
-              <span className="self-stretch my-auto">Solicitar asistencia</span>
+              <span className="btn-solicitar self-stretch my-auto">Solicitar asistencia</span>
               <img
                 src="https://cdn.builder.io/api/v1/image/assets/b8628246b4fa4846b671e4072fe20009/b84b83634960f8e6be2f08c6f6db9eb614053b638c6c295e651141c9cb8b8b8c?placeholderIfAbsent=true"
                 alt="Arrow"
